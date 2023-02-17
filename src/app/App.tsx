@@ -3,6 +3,7 @@ import AppRouter from "app/providers/router";
 import { Navbar } from "widgets/Navbar";
 import { useTheme } from "./providers/ThemeProvider";
 import { Sidebar } from "widgets/Sidebar";
+import { Suspense } from "react";
 import "./styles/index.scss";
 
 const App = () => {
@@ -10,11 +11,13 @@ const App = () => {
 
     return (
         <div className={cn("app", {}, [theme])}>
-            <Navbar/>
-            <div className="content-page">
-                <Sidebar/>
-                <AppRouter/>
-            </div>
+            <Suspense fallback="">
+                <Navbar/>
+                <div className="content-page">
+                    <Sidebar/>
+                    <AppRouter/>
+                </div>
+            </Suspense>
         </div>
     );
 };
