@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import cn from "shared/lib/classNames";
+import { LangSwitcher } from "widgets/LangSwitcher";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import styles from "./styles.module.scss";
 
@@ -19,7 +20,7 @@ export const Sidebar: FC<ISidebar> = ({ className }) => {
 
             <div className={styles.switchers}>
                 <ThemeSwitcher/>
-                {/*LangSwitcher*/}
+                <LangSwitcher />
             </div>
         </div>
     );
