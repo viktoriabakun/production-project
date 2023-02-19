@@ -8,7 +8,7 @@ const classNames = (cls: string, mods: Mods = {}, additional: string[] = []): st
     ...additional,
     Object.entries(mods)
         .filter(([_, value]) => Boolean(value))
-        .map(([className]) => className)
-].join(" ");
+        .map(([className]) => className),
+].join(' ');
 
 export default classNames;
