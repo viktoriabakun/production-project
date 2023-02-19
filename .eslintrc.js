@@ -7,14 +7,17 @@ module.exports = {
         'plugin:react/recommended',
         'airbnb',
     ],
-    overrides: [
-    ],
+    parser: '@typescript-eslint/parser',
     parserOptions: {
+        ecmaFeatures: {
+            jsx: true,
+        },
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
     plugins: [
         'react',
+        '@typescript-eslint',
     ],
     rules: {
         indent: [2, 4],
@@ -32,6 +35,7 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'warn',
         'no-restricted-exports': 'warn',
+        'no-underscore-dangle': 'off',
     },
     globals: {
         __IS_DEV_BUILD: true,
