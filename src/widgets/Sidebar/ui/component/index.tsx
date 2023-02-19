@@ -2,6 +2,7 @@ import { FC, useState } from 'react';
 import cn from 'shared/lib/classNames';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import { useTranslation } from 'react-i18next';
 import styles from './styles.module.scss';
 
 interface ISidebar {
@@ -9,6 +10,7 @@ interface ISidebar {
 }
 
 export const Sidebar: FC<ISidebar> = ({ className }) => {
+    const { t } = useTranslation();
     const [isCollapsed, setIsCollapsed] = useState(false);
 
     const onToggle = () => setIsCollapsed((prev) => !prev);
@@ -20,7 +22,7 @@ export const Sidebar: FC<ISidebar> = ({ className }) => {
                 onClick={onToggle}
                 type="button"
             >
-                toggle
+                {t('toggle')}
             </button>
 
             <div className={styles.switchers}>
