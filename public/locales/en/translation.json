@@ -1,5 +1,8 @@
 {
   "Testing example": "Testing example",
   "Translate": "Translate",
-  "Language": "English"
+  "Language": "English",
+  "toggle": "toggle",
+  "Main": "Main",
+  "About": "About"
 }
