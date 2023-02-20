@@ -6,9 +6,9 @@ type Mods = Record<string, boolean | string>
 const classNames = (cls: string, mods: Mods = {}, additional: string[] = []): string => [
     cls,
     ...additional,
-    Object.entries(mods)
+    ...Object.entries(mods)
         .filter(([_, value]) => Boolean(value))
         .map(([className]) => className)]
-    .join(' ').replace(',', ' ').trim();
+    .join(' ');
 
 export default classNames;
