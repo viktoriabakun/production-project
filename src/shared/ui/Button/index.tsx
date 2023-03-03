@@ -3,7 +3,8 @@ import cn from 'shared/lib/classNames';
 import styles from './styles.module.scss';
 
 export enum THEME_BUTTON {
-    CLEAR = 'clear'
+    CLEAR = 'clear',
+    BORDER = 'border',
 }
 
 interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
