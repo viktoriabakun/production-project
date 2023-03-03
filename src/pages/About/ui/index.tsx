@@ -4,14 +4,11 @@ import { useTranslation } from 'react-i18next';
 const AboutPage = () => {
     const { t } = useTranslation('about');
 
-    useEffect(() => {
-        throw new Error('haha you failed');
-    }, []);
+    useEffect(() => { throw new Error('gygy'); }, []);
 
     return (
         <div>
             {t('About page')}
-            {' '}
             :)
         </div>
     );

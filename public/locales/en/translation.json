@@ -4,5 +4,7 @@
   "Language": "English",
   "toggle": "toggle",
   "Main": "Main",
-  "About": "About"
+  "About": "About",
+  "Something went wrong": "Something went wrong",
+  "Reload page": "Reload page"
 }
