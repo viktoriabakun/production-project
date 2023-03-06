@@ -36,13 +36,26 @@ module.exports = {
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
         'import/extensions': 'off',
-        'import/no-extraneous-dependencies': 'warn',
+        'import/no-extraneous-dependencies': ['warn', { devDependencies: true }],
         'no-restricted-exports': 'warn',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true, onlyAttribute: [''] }],
+        'i18next/no-literal-string': [
+            'error',
+            {
+                markupOnly: true, ignoreAttribute: ['data-testid'],
+            },
+        ],
         'max-len': ['error', { code: 100, ignoreComments: true, ignoreUrls: true }],
     },
     globals: {
         __IS_DEV_BUILD: true,
     },
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+    ],
 };
