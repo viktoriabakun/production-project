@@ -16,9 +16,13 @@ export const Sidebar: FC<ISidebar> = ({ className }) => {
     const onToggle = () => setIsCollapsed((prev) => !prev);
 
     return (
-        <div className={cn(styles.sidebar, { [styles.collapsed]: isCollapsed }, [className])}>
+        <div
+            data-testid="sidebar"
+            className={cn(styles.sidebar, { [styles.collapsed]: isCollapsed }, [className])}
+        >
 
             <button
+                data-testid="sidebar-toggle"
                 onClick={onToggle}
                 type="button"
             >
