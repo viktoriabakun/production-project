@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
+import { THEME } from 'app/providers/ThemeProvider';
 import { Button, THEME_BUTTON } from '.';
 
 export default {
@@ -24,8 +25,15 @@ Clear.args = {
     theme: THEME_BUTTON.CLEAR,
 };
 
-export const Border = Template.bind({});
-Border.args = {
-    children: 'Border button',
+export const BorderLight = Template.bind({});
+BorderLight.args = {
+    children: 'BorderLight',
     theme: THEME_BUTTON.BORDER,
 };
+
+export const BorderDark = Template.bind({});
+BorderDark.args = {
+    children: 'BorderDark',
+    theme: THEME_BUTTON.BORDER,
+};
+BorderDark.decorators = [ThemeDecorator(THEME.DARK)];
