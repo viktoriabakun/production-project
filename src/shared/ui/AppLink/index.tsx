@@ -5,7 +5,8 @@ import styles from './styles.module.scss';
 
 export enum APP_LINK_THEME {
     PRIMARY = 'primary',
-    SECONDARY = 'secondary'
+    SECONDARY = 'secondary',
+    RED = 'red'
 }
 
 interface IAppLink extends LinkProps {
