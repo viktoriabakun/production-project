@@ -6,14 +6,26 @@
     transition: width 300ms;
 }
 
-.collapsed {
-    width: var(--sidebar-width-collapsed);
+.appLinks {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
 }
 
-.collapseBtn {
-    position: absolute;
-    bottom: 32px;
-    right: -32px;
+.appLink {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 24px;
+}
+
+.appLinkName {
+    opacity: 1;
+}
+
+.appLinkIcon {
+    fill: var(--inverted-primary-color);
 }
 
 .switchers {
@@ -29,4 +41,31 @@
 
 .switchersInCol {
     flex-direction: column;
+}
+
+// COLLAPSED
+
+.collapsed {
+    width: var(--sidebar-width-collapsed);
+
+    .appLinks {
+        align-self: center;
+        justify-content: center;
+    }
+
+    .appLinkName {
+        opacity: 0;
+        transition: opacity 300ms;
+        display: none;
+    }
+
+    .appLink {
+        justify-content: center;
+    }
+}
+
+.collapseBtn {
+    position: absolute;
+    bottom: 32px;
+    right: -32px;
 }
