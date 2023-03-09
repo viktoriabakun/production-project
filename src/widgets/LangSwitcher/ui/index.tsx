@@ -5,9 +5,10 @@ import { useTranslation } from 'react-i18next';
 
 interface ILangSwitcher {
     className?: string;
+    short?: boolean;
 }
 
-export const LangSwitcher: FC<ILangSwitcher> = ({ className }) => {
+export const LangSwitcher: FC<ILangSwitcher> = ({ className, short }) => {
     const { t, i18n } = useTranslation();
 
     const toggleLang = () => i18n.changeLanguage(i18n.language === 'bel' ? 'en' : 'bel');
@@ -17,7 +18,7 @@ export const LangSwitcher: FC<ILangSwitcher> = ({ className }) => {
             className={cn('', {}, [className])}
             onClick={toggleLang}
         >
-            {t('Language')}
+            {t(short ? 'Short Language' : 'Language')}
         </Button>
     );
 };

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import cn from 'shared/lib/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button, THEME_BUTTON } from 'shared/ui/Button';
+import { Button, BUTTON_THEME } from 'shared/ui/Button';
 import styles from './styles.module.scss';
 
 interface IPageError {
@@ -21,7 +21,7 @@ export const PageError: FC<IPageError> = ({ className }) => {
             </h1>
             <Button
                 onClick={onReload}
-                theme={THEME_BUTTON.BORDER}
+                theme={BUTTON_THEME.BORDER}
             >
                 {t('Reload page')}
             </Button>
