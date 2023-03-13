@@ -1,5 +1,4 @@
 import React, { ErrorInfo, ReactNode } from 'react';
-import * as Sentry from '@sentry/react';
 import { PageError } from 'widgets/PageError';
 
 interface ErrorBoundaryProps {
@@ -23,7 +22,7 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
 
     componentDidCatch(error: Error, errorInfo: ErrorInfo) {
         // You can also log the error to an error reporting service
-        Sentry.captureException(error);
+        console.log(error, errorInfo);
     }
 
     render() {
