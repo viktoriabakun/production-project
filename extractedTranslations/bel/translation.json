@@ -10,5 +10,7 @@
   "Something went wrong": {
     "": ""
   },
+  "decrement": "decrement",
+  "increment": "increment",
   "toggle": "toggle"
 }
