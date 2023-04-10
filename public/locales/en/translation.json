@@ -8,5 +8,7 @@
   "About": "About",
   "Something went wrong": "Something went wrong",
   "Reload page": "Reload page",
-  "Login": "Login"
+  "Login": "Login",
+  "increment": "increment",
+    "decrement": "decrement"
 }
