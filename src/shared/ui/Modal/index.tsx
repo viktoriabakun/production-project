@@ -3,7 +3,6 @@ import {
 } from 'react';
 import cn from 'shared/lib/classNames';
 import { Portal } from 'shared/ui/Portal';
-import { useTheme } from 'app/providers/ThemeProvider';
 import styles from './styles.module.scss';
 
 interface IModal {
@@ -18,7 +17,6 @@ export const Modal: FC<IModal> = ({
     className, isOpen, onClose, children,
 }) => {
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
-    const { theme } = useTheme();
 
     const [isClosing, setIsClosing] = useState(false);
 
@@ -54,7 +52,6 @@ export const Modal: FC<IModal> = ({
     const mods: Record<string, boolean> = {
         [styles.opened]: isOpen,
         [styles.isClosing]: isClosing,
-        [styles[theme]]: true,
     };
 
     return (
