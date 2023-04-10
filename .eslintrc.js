@@ -59,6 +59,7 @@ module.exports = {
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
+        'jsx-a11y/no-autofocus': 'off',
     },
     globals: {
         __IS_DEV_BUILD__: true,

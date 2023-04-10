@@ -6,10 +6,12 @@
   "Main": "Main",
   "Main page": "Main page",
   "Page not found": "Page not found",
+  "Password": "Password",
   "Reload page": "Reload page",
   "Something went wrong": {
     "": ""
   },
+  "Username": "Username",
   "decrement": "decrement",
   "increment": "increment",
   "toggle": "toggle"
