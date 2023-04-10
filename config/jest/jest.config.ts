@@ -6,27 +6,19 @@
 import path from 'path';
 
 export default {
-    // All imported modules in your tests should be mocked automatically
-    // automock: false,
 
-    // Stop running tests after `n` failures
-    // bail: 0,
+    globals: {
+        __IS_DEV_BUILD__: true,
+    },
 
-    // The directory where Jest should store its cached dependency information
-    // cacheDirectory: "/private/var/folders/8k/1gw5t0d16msfw6zpkw6zpbvr0000gn/T/jest_dx",
-
-    // Automatically clear mock calls, instances and results before every test
     clearMocks: true,
 
-    // The test environment that will be used for testing
     testEnvironment: 'jsdom',
 
     coveragePathIgnorePatterns: [
         '/node_modules/',
     ],
 
-    // An array of directory names to be searched recursively
-    // up from the requiring module's location
     moduleDirectories: [
         'node_modules',
     ],
@@ -35,12 +27,8 @@ export default {
         '<rootDir>src',
     ],
 
-    // A list of paths to modules that run some code to configure or set up the testing framework
-    // before each test
-
     setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
 
-    // An array of file extensions your modules use
     moduleFileExtensions: [
         'js',
         'jsx',
@@ -65,6 +53,15 @@ export default {
         '**/__tests__/**/*.[jt]s?(x)',
         '**/?(*.)+(spec|test).[jt]s?(x)',
     ],
+
+    // All imported modules in your tests should be mocked automatically
+    // automock: false,
+
+    // Stop running tests after `n` failures
+    // bail: 0,
+
+    // The directory where Jest should store its cached dependency information
+    // cacheDirectory: "/private/var/folders/8k/1gw5t0d16msfw6zpkw6zpbvr0000gn/T/jest_dx",
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
@@ -108,9 +105,6 @@ export default {
     // A path to a module which exports an async function
     // that is triggered once after all test suites
     // globalTeardown: undefined,
-
-    // A set of global variables that need to be available in all test environments
-    // globals: {},
 
     // The maximum amount of workers used to run your tests.
     // Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of
