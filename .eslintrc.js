@@ -61,7 +61,7 @@ module.exports = {
         'no-param-reassign': 'off',
     },
     globals: {
-        __IS_DEV_BUILD: true,
+        __IS_DEV_BUILD__: true,
     },
     overrides: [{
         files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
