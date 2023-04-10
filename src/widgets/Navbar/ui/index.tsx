@@ -1,8 +1,8 @@
 import { FC, useCallback, useState } from 'react';
 import cn from 'shared/lib/classNames';
-import { Modal } from 'shared/ui/Modal';
 import { Button, BUTTON_THEME } from 'shared/ui/Button';
 import { useTranslation } from 'react-i18next';
+import { LoginModal } from 'features/AuthByUsername';
 import styles from './styles.module.scss';
 
 interface INavbar {
@@ -14,22 +14,20 @@ export const Navbar: FC<INavbar> = ({ className }) => {
 
     const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
-    const toggleAuthModal = useCallback(() => setIsAuthModalOpen((prev) => !prev), []);
+    const onCloseAuthModal = useCallback(() => setIsAuthModalOpen(false), []);
+    const onOpenAuthModal = useCallback(() => setIsAuthModalOpen(true), []);
 
     return (
         <div className={cn(styles.navbar, {}, [className])}>
             <Button
-                onClick={toggleAuthModal}
+                onClick={onOpenAuthModal}
                 className={styles.links}
                 theme={BUTTON_THEME.CLEAR_INVERTED}
             >
                 {t('Login')}
             </Button>
 
-            <Modal isOpen={isAuthModalOpen} onClose={toggleAuthModal}>
-                {/* eslint-disable-next-line */}
-                <div>ipsum lorem ipsum</div>
-            </Modal>
+            <LoginModal isOpen={isAuthModalOpen} onClose={onCloseAuthModal} />
         </div>
     );
 };

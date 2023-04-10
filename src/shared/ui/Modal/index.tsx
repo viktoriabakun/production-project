@@ -9,16 +9,18 @@ interface IModal {
     className?: string;
     isOpen?: boolean;
     onClose?: () => void;
+    isLazy?: boolean;
 }
 
 const ANIMATION_DELAY = 200;
 
 export const Modal: FC<IModal> = ({
-    className, isOpen, onClose, children,
+    className, isOpen, onClose, isLazy, children,
 }) => {
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
     const [isClosing, setIsClosing] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
 
     const onCloseHandler = useCallback(() => {
         if (onClose) {
@@ -40,6 +42,12 @@ export const Modal: FC<IModal> = ({
 
     useEffect(() => {
         if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
+
+    useEffect(() => {
+        if (isOpen) {
             window.addEventListener('keydown', onKeyDown);
         }
 
@@ -53,6 +61,10 @@ export const Modal: FC<IModal> = ({
         [styles.opened]: isOpen,
         [styles.isClosing]: isClosing,
     };
+
+    if (isLazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal>

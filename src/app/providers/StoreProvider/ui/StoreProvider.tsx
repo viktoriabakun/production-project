@@ -2,15 +2,15 @@ import React, { FC } from 'react';
 import { Provider } from 'react-redux';
 import { DeepPartial } from '@reduxjs/toolkit';
 import { createReduxStore } from '../index';
-import { StateSchema } from '../config/state-schema';
+import { IStateSchema } from '../config/state-schema';
 
 interface IStoreProvider {
     children?: React.ReactNode;
-    initialState?: DeepPartial<StateSchema>;
+    initialState?: DeepPartial<IStateSchema>;
 }
 
 const StoreProvider: FC<IStoreProvider> = ({ children, initialState }) => {
-    const store = createReduxStore(initialState as StateSchema);
+    const store = createReduxStore(initialState as IStateSchema);
 
     return (
         <Provider store={store}>{children}</Provider>
