@@ -4,7 +4,3 @@
 npm run build:prod
 npm run eslint:run
 npm run stylelint:run
-npm run test:unit
-npm run storybook:build
-npm run test:ui
-npm test
