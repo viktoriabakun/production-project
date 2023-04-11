@@ -21,6 +21,7 @@ interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
     theme?: BUTTON_THEME;
     square?: boolean;
     size?: BUTTON_SIZE;
+    disabled?: boolean;
 }
 
 export const Button: FC<IButton> = ({
@@ -28,11 +29,13 @@ export const Button: FC<IButton> = ({
     theme = BUTTON_THEME.CLEAR,
     square = false,
     size = BUTTON_SIZE.M,
+    disabled,
     children,
     ...restProps
 }) => {
     const mods: Record<string, boolean> = {
         [styles.square]: square,
+        [styles.disabled]: disabled,
     };
 
     const additionalClasses: string[] = [styles[theme], styles[size]];
@@ -41,6 +44,7 @@ export const Button: FC<IButton> = ({
         <button
             className={cn(styles.button, mods, [className, ...additionalClasses])}
             type="button"
+            disabled={disabled}
             {...restProps}
         >
             {children}

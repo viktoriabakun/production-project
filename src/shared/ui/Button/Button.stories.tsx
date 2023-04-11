@@ -19,6 +19,13 @@ Primary.args = {
     children: 'Primary button',
 };
 
+export const Disabled = Template.bind({});
+Disabled.args = {
+    children: 'Disabled button',
+    disabled: true,
+    theme: BUTTON_THEME.BACKGROUND,
+};
+
 export const Clear = Template.bind({});
 Clear.args = {
     children: 'Clear button',

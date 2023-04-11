@@ -9,6 +9,11 @@
   "Something went wrong": "Something went wrong",
   "Reload page": "Reload page",
   "Login": "Login",
+  "Logout": "Logout",
   "increment": "increment",
-    "decrement": "decrement"
+  "decrement": "decrement",
+  "Login form": "Login form",
+  "Username": "Username",
+  "Password": "Password",
+  "Wrong username or password": "Wrong username or password"
 }
