@@ -2,7 +2,6 @@ import { FC } from 'react';
 import cn from 'shared/lib/classNames';
 import { Modal } from 'shared/ui/Modal';
 import { LoginForm } from '../LoginForm';
-import styles from './styles.module.scss';
 
 interface ILoginModal {
     className?: string;
@@ -12,7 +11,7 @@ interface ILoginModal {
 
 export const LoginModal: FC<ILoginModal> = ({ className, isOpen, onClose }) => (
     <Modal
-        className={cn(styles.loginModal, {}, [className])}
+        className={cn('', {}, [className])}
         isOpen={isOpen}
         onClose={onClose}
         isLazy

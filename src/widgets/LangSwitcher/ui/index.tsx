@@ -18,7 +18,7 @@ export const LangSwitcher: FC<ILangSwitcher> = ({ className, short }) => {
             className={cn('', {}, [className])}
             onClick={toggleLang}
         >
-            {t(short ? 'Short Language' : 'Language')}
+            {t(short ? 'ShortLanguage' : 'Language')}
         </Button>
     );
 };
