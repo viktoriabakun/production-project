@@ -5,6 +5,7 @@ import { Button, BUTTON_THEME } from 'shared/ui/Button';
 import Input from 'shared/ui/Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { Text, TEXT_THEME } from 'shared/ui/Text';
+import i18n from 'shared/config/i18n';
 import { loginByUsername } from '../../model/services/login-by-username';
 import { loginActions } from '../../model/slice/login-slice';
 import { getLoginState } from '../../model/selectors/getLoginState';
@@ -40,7 +41,7 @@ export const LoginForm: FC<ILoginForm> = ({ className }) => {
     return (
         <div className={cn(styles.loginForm, {}, [className])}>
             <Text title={t('Login form')} theme={TEXT_THEME.PRIMARY} />
-            {error && <Text text={error} theme={TEXT_THEME.ERROR} />}
+            {error && <Text text={i18n.t('Wrong username or password')} theme={TEXT_THEME.ERROR} />}
 
             <Input
                 value={username}
