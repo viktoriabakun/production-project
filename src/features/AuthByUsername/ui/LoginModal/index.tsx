@@ -1,7 +1,8 @@
-import { FC } from 'react';
+import { FC, Suspense } from 'react';
 import cn from 'shared/lib/classNames';
 import { Modal } from 'shared/ui/Modal';
-import { LoginForm } from '../LoginForm';
+import { Spinner } from 'shared/ui/Spinner';
+import { LoginFormLazy } from '../LoginForm/index.lazy';
 
 interface ILoginModal {
     className?: string;
@@ -16,6 +17,9 @@ export const LoginModal: FC<ILoginModal> = ({ className, isOpen, onClose }) => (
         onClose={onClose}
         isLazy
     >
-        <LoginForm />
+
+        <Suspense fallback={<Spinner />}>
+            <LoginFormLazy />
+        </Suspense>
     </Modal>
 );

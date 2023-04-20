@@ -18,6 +18,7 @@ export const LangSwitcher: FC<ILangSwitcher> = ({ className, short }) => {
             className={cn('', {}, [className])}
             onClick={toggleLang}
         >
+            {/* i18next-extract-disable-next-line */}
             {t(short ? 'ShortLanguage' : 'Language')}
         </Button>
     );
