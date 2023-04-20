@@ -1,10 +1,23 @@
 import 'app/styles/index.scss';
 import { Story } from '@storybook/react';
 import { IStateSchema, StoreProvider } from 'app/providers/StoreProvider';
-import { DeepPartial } from '@reduxjs/toolkit';
+import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
+import { loginReducer } from 'features/AuthByUsername/model/slice/login-slice';
 
-export const StoreDecorator = (initState: DeepPartial<IStateSchema>) => (StoryComponent: Story) => (
-    <StoreProvider initialState={initState}>
+const defaultAsyncReducers: DeepPartial<ReducersMapObject<IStateSchema>> = {
+    loginForm: loginReducer,
+};
+
+export const StoreDecorator = (
+    initState: DeepPartial<IStateSchema>,
+    asyncReducers?: DeepPartial<ReducersMapObject>,
+) => (
+    StoryComponent: Story,
+) => (
+    <StoreProvider
+        initialState={initState}
+        asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}
+    >
         <StoryComponent />
     </StoreProvider>
 );
