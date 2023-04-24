@@ -10,7 +10,7 @@ export interface IStateSchema {
     user: IUserSchema;
 
     // Async reducers
-    loginForm?: ILoginSchema
+    loginForm?: ILoginSchema;
 }
 
 export type StateSchemaKey = keyof IStateSchema;
